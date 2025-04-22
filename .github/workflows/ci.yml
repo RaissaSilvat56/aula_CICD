@@ -14,7 +14,7 @@ jobs:
       run: sudo apt update && sudo apt install build-essential -y
 
     - name: Compilar o programa 
-      run: gcc github.c -o programa 
+      run:  github.c -o programa 
 
     - name: Execultar o programa 
       run: ./programa 
