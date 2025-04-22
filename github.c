@@ -1,5 +1,5 @@
 #include <stdio.h>
-int main(){
-  printf(" Olá GITHUB ACTIONS!\n"0);
+int main() {
+  printf("Olá GITHUB ACTIONS!\n");
 return 0;
 }
