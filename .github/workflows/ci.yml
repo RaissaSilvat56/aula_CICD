@@ -1,27 +1,28 @@
-name: CI para C 
+name: CI para C
 
-on:   
+on:
   push:
+    branches: 
+      - main  # ou qualquer branch que deseje monitorar
 
 jobs:
   build:
-    runs-on: ubuntu-latest 
-    
-    steps: 
-    - name: Clonar o repositório 
-      uses: actions/checkout@v3 
+    runs-on: ubuntu-latest
 
-    - name: Instalar compilador GCC 
-      run: sudo apt update && sudo apt install build-essential -y
+    steps:
+    - name: Clonar o repositório
+      uses: actions/checkout@v3
 
-    - name: Compilar o programa 
-      run: gcc github.c -o programa 
+    - name: Instalar compilador GCC
+      run: sudo apt-get update && sudo apt-get install -y build-essential
 
-    - name: Execultar o programa 
-      run: ./programa 
+    - name: Compilar o programa
+      run: gcc github.c -o programa
 
-    - name: Executar testes automizados
+    - name: Executar o programa
+      run: ./programa
+
+    - name: Executar testes automatizados
       run: |
         gcc -o teste teste.c
         ./teste
-    
