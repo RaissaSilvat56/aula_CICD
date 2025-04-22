@@ -16,6 +16,9 @@ jobs:
     - name: Compilar o programa 
       run: gcc GitHub.c -o programa 
 
+    - name: Execultar o programa 
+      run: ./programa 
+
     - name: Executar teste automizados
       run: |
         gcc -o teste teste.c
